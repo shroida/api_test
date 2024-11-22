@@ -2,7 +2,7 @@ import 'package:api_test/data/model.dart';
 import 'package:flutter/material.dart';
 
 class GenderAgeUser extends StatelessWidget {
-  const GenderAgeUser({Key? key, required this.user}) : super(key: key);
+  const GenderAgeUser({super.key, required this.user});
   final User user;
   @override
   Widget build(BuildContext context) {
