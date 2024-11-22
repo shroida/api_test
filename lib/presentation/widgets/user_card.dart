@@ -1,5 +1,6 @@
 import 'package:api_test/data/model.dart';
 import 'package:api_test/presentation/widgets/gender_age_user.dart';
+import 'package:api_test/presentation/widgets/user_city_country.dart';
 import 'package:api_test/presentation/widgets/user_email.dart';
 import 'package:api_test/presentation/widgets/user_image.dart';
 import 'package:api_test/presentation/widgets/user_name.dart';
@@ -13,17 +14,7 @@ class UserCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.amber.shade100,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 10,
-            offset: Offset(0, 5),
-          ),
-        ],
-      ),
+      decoration: boxDecoration(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -35,12 +26,23 @@ class UserCard extends StatelessWidget {
           const SizedBox(height: 8),
           GenderAgeUser(user: user),
           const SizedBox(height: 8),
-          Text(
-            '${user.city}, ${user.country}',
-            style: const TextStyle(fontSize: 16),
-          ),
+          UserCityCountry(user: user)
         ],
       ),
+    );
+  }
+
+  BoxDecoration boxDecoration() {
+    return BoxDecoration(
+      color: Colors.amber.shade100,
+      borderRadius: BorderRadius.circular(15),
+      boxShadow: const [
+        BoxShadow(
+          color: Colors.black26,
+          blurRadius: 10,
+          offset: Offset(0, 5),
+        ),
+      ],
     );
   }
 }
