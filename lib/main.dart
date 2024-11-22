@@ -1,3 +1,4 @@
+import 'package:api_test/presentation/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,6 +19,6 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Text('SHROIDA'));
+    return const Scaffold(body: HomePage());
   }
 }
